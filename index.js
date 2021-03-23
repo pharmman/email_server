@@ -22,11 +22,12 @@ async function main() {
     app.post('/sendMessage',   (req, res) => {
         const {name, email, text} = req.body
 
+
         let info =  transporter.sendMail({
             from: name,
             sender: email,// sender address
             to: 'pharm.sale777@gmail.com', // list of receivers
-            subject: name, // Subject line
+            subject: `${name} ${email}`, // Subject line
             text:  text, // plain text body
             // html: `<b>${email}</b>`, // html body
         });
